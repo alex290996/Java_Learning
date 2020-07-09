@@ -18,6 +18,11 @@ try {
      System.out.println(name + ":" + i);
      Thread.sleep(200);
         // returns the state of this thread
+        /*currentThread() - текущий поток выполнения
+        getState() - статус потока
+        wait() - приостанавливает выполнение потока
+        notify() - возобновление потока
+        join() - завершает поток после выполнения либо через определенный интервал времени*/
         Thread.State state = Thread.currentThread().getState();
         System.out.println(Thread.currentThread().getName());
         System.out.println("state = " + state);
