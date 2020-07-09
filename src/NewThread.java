@@ -17,6 +17,10 @@ try {
     for(int i = 15; i > 0; i--) {
      System.out.println(name + ":" + i);
      Thread.sleep(200);
+        // returns the state of this thread
+        Thread.State state = Thread.currentThread().getState();
+        System.out.println(Thread.currentThread().getName());
+        System.out.println("state = " + state);
      synchronized (this) {
          while(suspendFlag) {
              wait();
