@@ -19,7 +19,9 @@ try {
      Thread.sleep(200);
         // returns the state of this thread
         /*currentThread() - текущий поток выполнения
-        getState() - статус потока
+        getState() - статус потока. Значения: BLOCKED - Приостановил выполнение, ожидает блокировки; NEW - Ожидает выполнения;
+        RUNNABLE - Выполняется; TERMINATED - Завершен; TIMED_WAITING - приостановил выполнение на определенный промежуток времени;
+        WAITING - Ожидает некоторого действия.
         wait() - приостанавливает выполнение потока
         notify() - возобновление потока
         join() - завершает поток после выполнения либо через определенный интервал времени*/
@@ -37,14 +39,11 @@ catch (InterruptedException e) {
     System.out.println(name + " прерван");
 }
     }
-
-synchronized void mysuspend () {
+    synchronized void mysuspend () {
             suspendFlag = true;
 }
-
-synchronized void myresume () {
+    void myresume () {
             suspendFlag = false;
             notify();
 }
-
 }
