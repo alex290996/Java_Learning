@@ -3,11 +3,34 @@ import java.util.*;
 
 public class CollectionTest {
     public static void main(String args[]) {
+        // Получить массив
+        Integer arr[] = { 2, 5, 1, 8, 34, 20, 4 };
+        // печать массива
+       System.out.println("Array: " + Arrays.toString(arr));
+        // получение минимального значения
+        // используя метод min ()
+        int minArray = Collections.min(Arrays.asList(arr));
+        // получение максимального значения
+        // используя метод max ()
+       int maxArray = Collections.max(Arrays.asList(arr)); //asList - формирует список на основе массива
+        // печать минимального значения
+        System.out.println("Minimum value of Array is: " + minArray);
+        // печать максимального значения
+        System.out.println("Maximum value of Array is: " + maxArray);
+
         Collection collection = new ArrayList();
         collection.add("1"); // добавить значение
         collection.add("2");
         collection.add("3");
         collection.remove("1");
+        Object minList = Collections.min(collection);
+        // получение максимального значения
+        // используя метод max ()
+        Object maxList = Collections.max(collection);
+        // печать минимального значения
+        System.out.println("Minimum value of list is: " + minList);
+        // печать максимального значения
+        System.out.println("Maximum value of list is: "                + maxList);
         Iterator iterator = collection.iterator();
 
         /*Дословно «Iterator» можно перевести как «переборщик». То есть это некая сущность, способная перебрать
@@ -35,6 +58,15 @@ public class CollectionTest {
         collection3.add("2");
         collection3.add("3");
         collection3.add("4");
+        // используя метод min ()
+        Object minSet = Collections.min(collection3);
+        // получение максимального значения
+        // используя метод max ()
+        Object maxSet = Collections.max(collection3);
+        // печать минимального значения
+        System.out.println("Minimum value of set is: " + minSet);
+        // печать максимального значения
+        System.out.println("Maximum value of set is: " + maxSet);
         for (Object o: collection3) { //foreach - использует метод Iterator
             System.out.println(o);
             }
@@ -50,10 +82,20 @@ public class CollectionTest {
         System.out.println("num of elements" + collection4.size());
 
         System.out.println("Map");
-        Map collection5 = new HashMap();
-        collection5.put("1", "Isarow");
-        collection5.put("2", "Tolstog");
+        Map collection5 = new HashMap<String, Integer>();
+        collection5.put("1", 10);
+        collection5.put("2", 15);
 
+        // получение минимального значения с помощью min ()
+        Object minKey = Collections.min(collection5.keySet());
+        // получение максимального значения с помощью max ()
+        Object maxValue = Collections.max(collection5.values());
+        System.out.println("Value corresponding to "
+                + "minimum Key of Map is: "
+                + collection5.get(minKey));
+        // печать максимального значения
+        System.out.println("Maximum Value of Map is: "
+                + maxValue);
         Set set = collection5.entrySet();
         for(Object j: set){
             System.out.println(j);
